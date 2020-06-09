@@ -6,15 +6,7 @@ Follow these steps to set up your local development environment.
 ### Git
 1. Create a free account on [GitHub](https://github.com/)
 1. Install Git on your computer by following the instructions at https://git-scm.com/
-1. Activate Git LFS by typing the command:
-    ```shell
-    $ git lfs install
-    ```
-
-### VSCode
-Download and install VSCode (https://code.visualstudio.com/Download).
-
-### Unity 3D
+1. Download and install VSCode (https://code.visualstudio.com/Download).
 1. Create an account and download the free version from [Unity's Store](https://store.unity.com/download?ref=personal)
 1. Follow the instructions to set up VSCode as the editor for Unity https://code.visualstudio.com/docs/other/unity
 
@@ -49,12 +41,14 @@ Download and install VSCode (https://code.visualstudio.com/Download).
     # if you are on Linux
 	cd /projects
     ```
-1. Clone the Unity repo
+1. Clone the Unity repo and set up Git LFS
     ```ps
     # copies the remote repository from spaceducks/unity-game and puts it into a folder named ProjectForge
 	git clone https://github.com/spaceducks/unity-game ProjectForge
+    
+    # Initialize git LFS
+    git lfs install
     ```
-
 
 ## References:
 * Using git with Unity: https://thoughtbot.com/blog/how-to-git-with-unity
