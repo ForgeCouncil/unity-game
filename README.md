@@ -45,10 +45,15 @@ Follow these steps to set up your local development environment.
     ```ps
     # copies the remote repository from spaceducks/unity-game and puts it into a folder named ProjectForge
 	git clone https://github.com/spaceducks/unity-game ProjectForge
+
+    # change directories into your new folder
+    cd ProjectForge
     
     # Initialize git LFS
     git lfs install
     ```
+1. Open UnityHub then select the Add button and choose the ProjectForge folder to add it to UnityHub
+1. Click on the new entry for ProjectForge to launch it in Unity
 
 ## References:
 * Using git with Unity: https://thoughtbot.com/blog/how-to-git-with-unity
