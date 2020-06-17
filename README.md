@@ -55,6 +55,36 @@ Follow these steps to set up your local development environment.
 1. Open UnityHub then select the Add button and choose the ProjectForge folder to add it to UnityHub
 1. Click on the new entry for ProjectForge to launch it in Unity
 
+## Making Changes in the Game
+
+2. Open cmd 
+
+2. Set directory to Project Forge on your computer
+   ```ps
+   # If your project is in another drive (D-drive)
+      D:
+   # Then, change to the path your Project Forge is located:
+      cd D:\Projects\ProjectForge
+
+2. Check to see if your version of the game is up to date:
+   ```ps
+   git status
+
+   # If it is not up to date:
+   git pull
+
+2. Once your changes have been made to your unity file, SAVE the file in unity, then:
+   ```ps
+   git add .
+
+   git commit -m "Any message describing what you did with quotes”
+
+   git push
+
+2. Just to make sure the change was added, check the discord text channel “github” and see if your commit was made
+
+
+
 ## References:
 * Using git with Unity: https://thoughtbot.com/blog/how-to-git-with-unity
 * Git LFS: https://git-lfs.github.com/
