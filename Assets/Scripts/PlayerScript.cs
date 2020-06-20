@@ -7,6 +7,7 @@ public class PlayerScript : MonoBehaviour
     public int maxHealth = 100;
     public int currentHealth;
     public HealthBar_ healthBar;
+
     void Start()
     {
         currentHealth = maxHealth;
@@ -23,6 +24,16 @@ public class PlayerScript : MonoBehaviour
         {
             HealPlayer(20);
         }
+        if (currentHealth > maxHealth)
+            {
+                currentHealth = maxHealth;
+                healthBar.SetHealth(currentHealth);
+            }
+        else if ( currentHealth < 0)
+        {
+            currentHealth = 0;
+            healthBar.SetHealth(currentHealth);
+        }
     }
 
     void TakeDamage(int damage)
@@ -37,5 +48,14 @@ public class PlayerScript : MonoBehaviour
         currentHealth += heal;
 
         healthBar.SetHealth(currentHealth);
+    }
+
+    void checkHealth(int currentHealth_)
+    {
+
+       // else 
+           // currentHealth_ = currentHealth_;
+        
+        healthBar.SetHealth(currentHealth_);
     }
 }
