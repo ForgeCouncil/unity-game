@@ -18,44 +18,35 @@ public class PlayerScript : MonoBehaviour
     {
         if(Input.GetKeyDown(KeyCode.K)) //if "k" is pressed player takes 10 damage
         {
-            TakeDamage(10);
+            Damage(10);
         }
         if(Input.GetKeyDown(KeyCode.H)) //if "H" is pressed player recieves 20 HP
         {
-            HealPlayer(20);
+            Heal(20);
         }
-        if (currentHealth > maxHealth)
+        if (currentHealth > maxHealth) //player can't exceed max health (100)
             {
                 currentHealth = maxHealth;
                 healthBar.SetHealth(currentHealth);
             }
-        else if ( currentHealth < 0)
+        else if ( currentHealth < 0) //player can't go below min health (0)
         {
             currentHealth = 0;
             healthBar.SetHealth(currentHealth);
         }
     }
 
-    void TakeDamage(int damage)
+    void Damage(int damage)
     {
         currentHealth -= damage;
 
         healthBar.SetHealth(currentHealth);
     }
 
-    void HealPlayer(int heal)
+    void Heal(int heal)
     {
         currentHealth += heal;
 
         healthBar.SetHealth(currentHealth);
-    }
-
-    void checkHealth(int currentHealth_)
-    {
-
-       // else 
-           // currentHealth_ = currentHealth_;
-        
-        healthBar.SetHealth(currentHealth_);
     }
 }
