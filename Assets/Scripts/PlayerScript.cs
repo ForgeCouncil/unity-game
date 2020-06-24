@@ -6,7 +6,7 @@ public class PlayerScript : MonoBehaviour
 {
     public int maxHealth = 100;
     public int currentHealth;
-    public HealthBar_ healthBar;
+    public HealthBar healthBar;
 
     void Start()
     {
