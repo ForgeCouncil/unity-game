@@ -64,7 +64,7 @@ Follow these steps to set up your local development environment.
    # If your project is in another drive (D-drive)
       D:
    # Then, change to the path your Project Forge is located:
-      cd D:\Projects\ProjectForge
+       For example: cd D:\Projects\ProjectForge
 
 2. Check to see if your version of the game is up to date:
    ```ps
@@ -72,6 +72,19 @@ Follow these steps to set up your local development environment.
 
    # If it is not up to date:
    git pull
+   
+   I recommend doing this step right before you start working on the project, every time.
+   
+   # If you have changes made locally but need to make a pull
+   git stash
+   	this moves all of your local changes to another spot, your local copy will appear as though your changes have been deleted if opened at this point
+   git pull
+   	grabs the latest copy of the files, gets you up to date
+   git show
+   	shows everything in your stash, if it looks correct proceed
+   git stash pop
+   	restores stashed changes to your directory of the game, effectively reincluding your changes
+
 
 2. Once your changes have been made to your unity file, SAVE the file in unity, then:
    ```ps
