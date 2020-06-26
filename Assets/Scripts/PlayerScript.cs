@@ -10,8 +10,8 @@ public class PlayerScript : MonoBehaviour
 
     void Start()
     {
-        currentHealth = maxHealth;
-        healthBar.SetMaxHealth(maxHealth);
+        currentHealth = maxHealth; //set players health to max (full health bar)
+        healthBar.SetMaxHealth(maxHealth); //sets the health bar's max to maxHealth
     }
 
     void Update()
@@ -36,14 +36,14 @@ public class PlayerScript : MonoBehaviour
         }
     }
 
-    void Damage(int damage)
+    void Damage(int damage) //function to inflict damage to player
     {
         currentHealth -= damage;
 
         healthBar.SetHealth(currentHealth);
     }
 
-    void Heal(int heal)
+    void Heal(int heal) // function to heal player
     {
         currentHealth += heal;
 

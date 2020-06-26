@@ -220,6 +220,27 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!1 &478684230 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4557333155246042176, guid: a51866c7c4ef01d409fd8f78e9009615,
+    type: 3}
+  m_PrefabInstance: {fileID: 1368394197}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &478684231
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 478684230}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0369acbadba64c4eb41ddb9d8a6aeb2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 100
+  currentHealth: 0
+  healthBar: {fileID: 607063711}
 --- !u!1 &607063709
 GameObject:
   m_ObjectHideFlags: 0
@@ -283,8 +304,8 @@ MonoBehaviour:
     key5: {r: 0, g: 0, b: 0, a: 0}
     key6: {r: 0, g: 0, b: 0, a: 0}
     key7: {r: 0, g: 0, b: 0, a: 0}
-    ctime0: 5590
-    ctime1: 26600
+    ctime0: 13107
+    ctime1: 32768
     ctime2: 65535
     ctime3: 65535
     ctime4: 0
@@ -871,7 +892,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.93725497, g: 0.0627451, b: 0.121568635, a: 1}
+  m_Color: {r: 1, g: 0, b: 0, a: 1}
   m_RaycastTarget: 1
   m_Maskable: 1
   m_OnCullStateChanged:
