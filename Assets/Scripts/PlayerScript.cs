@@ -7,6 +7,7 @@ public class PlayerScript : MonoBehaviour
     public int maxHealth = 100;
     public int currentHealth;
     public HealthBar healthBar;
+    public float tickTime;
 
     void Start()
     {
@@ -48,5 +49,23 @@ public class PlayerScript : MonoBehaviour
         currentHealth += heal;
 
         healthBar.SetHealth(currentHealth);
+    }
+
+    void OnTriggerStay (Collider collisionInfo)
+    {
+        if (collisionInfo.gameObject.name == "PoisonArea")
+        {
+            tickTime -= Time.deltaTime;
+
+            Debug.Log ("Player triggered");
+
+            if (tickTime <= 0)
+            {
+                Debug.Log ("Player damaged");
+                Damage(10);
+                tickTime = 1.0f;
+            }
+        }
+
     }
 }
