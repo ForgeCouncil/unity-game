@@ -66,6 +66,19 @@ public class PlayerScript : MonoBehaviour
                 tickTime = 1.0f;
             }
         }
+        if (collisionInfo.gameObject.name == "HealthArea")
+        {
+            tickTime -= Time.deltaTime;
+
+            Debug.Log ("Player triggered");
+
+            if (tickTime <= 0)
+            {
+                Debug.Log ("Player healed");
+                Heal(10);
+                tickTime = 1.0f;
+            }
+        }
 
     }
 }
