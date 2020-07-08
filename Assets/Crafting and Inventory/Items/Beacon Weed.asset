@@ -1,0 +1,16 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6bd08620232cfdd4488cea83772c0bf0, type: 3}
+  m_Name: Beacon Weed
+  m_EditorClassIdentifier: 
+  ItemName: BeaconWeed
+  Icon: {fileID: 21300000, guid: 4442bf19e0b570347921f2bea34ce623, type: 3}
