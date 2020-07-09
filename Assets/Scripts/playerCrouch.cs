@@ -5,19 +5,28 @@ using UnityEngine;
 public class playerCrouch : MonoBehaviour
 {
    CharacterController characterCollider;
+
+float crouchHeight;
+float height;
+
     void Start()
     {
         characterCollider = gameObject.GetComponent<CharacterController> ();
+        height = characterCollider.height;
+        crouchHeight = (characterCollider.height/2);
     }
 
     
     void Update()
     {
+        
+        
         if (Input.GetKey(KeyCode.LeftControl)){
-            characterCollider.height = 1.9f;
+            characterCollider.height = crouchHeight;
+        
         }
         else {
-            characterCollider.height = 3.8f;
+            characterCollider.height = height;
         }
     }
 }
