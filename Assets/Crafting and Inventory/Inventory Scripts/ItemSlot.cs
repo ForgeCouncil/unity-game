@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿//Defines Items Slots with place holder sprites.
+using UnityEngine;
 using UnityEngine.UI;
 
 public class ItemSlot : MonoBehaviour
@@ -23,6 +24,8 @@ public class ItemSlot : MonoBehaviour
         }
     }
 
+    //Might need to change "private" to "protected override", then "virtual override" in the ItemSlot script.
+    //https://youtu.be/4JewzU_phTM?t=190
     private void OnValidate()
     {
         if (Image == null)

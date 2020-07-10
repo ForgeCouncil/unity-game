@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿//Script that manages the inventory menu, toggling it with "I" in game.
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -17,6 +18,7 @@ public class MenuManager : MonoBehaviour
             inMenu = !inMenu;
             if (inMenu == true)
                 print("Menu is up, freeze controls and free up the cursor.");
+                //meaning that this will eventually do this, will do later
         }
     }
 }
