@@ -1,4 +1,5 @@
 ﻿//Base script for inventory management and interaction with game objects.
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -8,6 +9,20 @@ public class Inventory : MonoBehaviour
     [SerializeField] List<Item> items;
     [SerializeField] Transform itemsParent;
     [SerializeField] ItemSlot[] itemSlots;
+
+    //Look at ItemSlot script's IPointerClick line and similar event.
+    
+    public event Action<Item> OnItemRightClickedEvent;
+
+    //Known as an "awake event". "Listeners" are contained below it.
+    private void Awake()
+    {
+        for (int i = 0; i < itemSlots.Length; i++)
+        {
+            //"To add a listener, we just use the '+=' operator and assign a mthod with the same signature as the event."
+            itemSlots[i].OnRightClickEvent += OnItemRightClickedEvent;
+        }
+    }
 
     //Putting items into the next sequential item slot.
     private void OnValidate()

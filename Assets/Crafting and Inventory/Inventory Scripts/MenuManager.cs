@@ -6,6 +6,7 @@ using UnityEngine;
 public class MenuManager : MonoBehaviour
 {
     public GameObject inventoryMenu;
+    //public GameObject firstPersonPlayer;
     private bool inMenu = false;
 
     void Update()
@@ -19,6 +20,11 @@ public class MenuManager : MonoBehaviour
             if (inMenu == true)
                 print("Menu is up, freeze controls and free up the cursor.");
                 //meaning that this will eventually do this, will do later
+                GameObject.Find("Camera").GetComponent<playerLook>().enabled = false;
+                //attempting to do this by using the same lines of code to disable Rick's player movement script
+
+            //if (inMenu == false)
+                //GameObject.Find("Camera").GetComponent<playerLook>().enabled = true;
         }
     }
 }

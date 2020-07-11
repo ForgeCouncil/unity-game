@@ -10,14 +10,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 353aab8cba9c7344b8132cc532ec83da, type: 3}
-  m_Name: Horn Shoot
+  m_Name: Anteshroom
   m_EditorClassIdentifier: 
   ItemName: 
-  Icon: {fileID: 21300000, guid: 0563b1bf3ac4a1c42a5b5899262119aa, type: 3}
+  Icon: {fileID: 21300000, guid: 24c2ff1bcaab8ac459c94ae7264a0ab9, type: 3}
   Description: 
-  StrengthMod: 0
-  ConstitutionMod: 0
-  DexterityMod: 0
+  StrengthMod: 97
+  ConstitutionMod: 14727
+  DexterityMod: 9
   WisdomMod: 0
   CharismaMod: 0
   LuckMod: 0

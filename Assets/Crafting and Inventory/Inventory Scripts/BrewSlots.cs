@@ -5,9 +5,9 @@ public class BrewSlots : ItemSlot
 
     //Might need to change "private" to "protected override", then "virtual override" in the ItemSlot script.
     //https://youtu.be/4JewzU_phTM?t=190
-   private void OnValidate()
+   protected override void OnValidate()
    {
-       // base.OnValidate();
+       base.OnValidate();
        gameObject.name = ItemType.ToString() + " Slot";
    }
 }
