@@ -5,26 +5,16 @@ using UnityEngine;
 
 public class MenuManager : MonoBehaviour
 {
-    public GameObject inventoryMenu;
-    //public GameObject firstPersonPlayer;
-    private bool inMenu = false;
+    public GameObject Menu;
+    public KeyCode Key;
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.I))
+        if (Input.GetKeyDown(Key))
         {
-            inventoryMenu.gameObject.SetActive(!inventoryMenu.activeSelf);
+            Menu.gameObject.SetActive(!Menu.activeSelf);
+            GameObject.Find("Camera").GetComponent<playerLook>().enabled = !(GameObject.Find("Camera").GetComponent<playerLook>().enabled);
             
-            //Freeze movements and free up cursor when menu is up
-            inMenu = !inMenu;
-            if (inMenu == true)
-                print("Menu is up, freeze controls and free up the cursor.");
-                //meaning that this will eventually do this, will do later
-                GameObject.Find("Camera").GetComponent<playerLook>().enabled = false;
-                //attempting to do this by using the same lines of code to disable Rick's player movement script
-
-            //if (inMenu == false)
-                //GameObject.Find("Camera").GetComponent<playerLook>().enabled = true;
         }
     }
 }
