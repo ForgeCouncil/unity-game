@@ -9,9 +9,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6bd08620232cfdd4488cea83772c0bf0, type: 3}
-  m_Name: Mind Matter Draught
+  m_Script: {fileID: 11500000, guid: 9867efa3150d6d94aafb678dd17fe706, type: 3}
+  m_Name: Health Buff (2x Iron Root)
   m_EditorClassIdentifier: 
-  ItemName: 
-  Icon: {fileID: 0}
-  Description: 
+  Materials:
+  - Item: {fileID: 11400000, guid: 64f6908a45d9c504f9d21e02ed33f70e, type: 2}
+    Amount: 2
+  Result:
+  - Item: {fileID: 0}
+    Amount: 1
