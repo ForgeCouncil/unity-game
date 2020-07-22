@@ -10,13 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9867efa3150d6d94aafb678dd17fe706, type: 3}
-  m_Name: New Crafting Recipe
+  m_Name: 6 Horn Shoot x Ethereal Blossom
   m_EditorClassIdentifier: 
   Materials:
-  - Item: {fileID: 11400000, guid: 1c02636522b09a7498d33da90cea57d8, type: 2}
-    Amount: 3
-  - Item: {fileID: 11400000, guid: 5773f7f5c62678a48ab53b7b12491257, type: 2}
+  - Item: {fileID: 11400000, guid: e8ca427d8da02dd419f95718130841ed, type: 2}
+    Amount: 1
+  - Item: {fileID: 11400000, guid: d6fc3f7096866554caa1ffe9ae4a75ee, type: 2}
     Amount: 1
   Result:
-  - Item: {fileID: 11400000, guid: 9faeca31cb21a26449859b751e29600f, type: 2}
+  - Item: {fileID: 0}
     Amount: 1

@@ -10,13 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9867efa3150d6d94aafb678dd17fe706, type: 3}
-  m_Name: Inventory Size Buff (Horn Shoot & Iron Root)
+  m_Name: 9 Lesser Healing Potion
   m_EditorClassIdentifier: 
   Materials:
-  - Item: {fileID: 11400000, guid: e8ca427d8da02dd419f95718130841ed, type: 2}
-    Amount: 1
   - Item: {fileID: 11400000, guid: 64f6908a45d9c504f9d21e02ed33f70e, type: 2}
-    Amount: 1
+    Amount: 2
   Result:
-  - Item: {fileID: 0}
+  - Item: {fileID: 11400000, guid: a71885835ee8fd44f955ee58d17c06ec, type: 2}
     Amount: 1

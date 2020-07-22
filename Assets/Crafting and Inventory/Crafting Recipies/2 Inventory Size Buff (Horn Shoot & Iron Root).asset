@@ -10,13 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9867efa3150d6d94aafb678dd17fe706, type: 3}
-  m_Name: Mind Matter Draught Recipe
+  m_Name: 2 Inventory Size Buff (Horn Shoot & Iron Root)
   m_EditorClassIdentifier: 
   Materials:
-  - Item: {fileID: 0}
-    Amount: 2
-  - Item: {fileID: 0}
+  - Item: {fileID: 11400000, guid: e8ca427d8da02dd419f95718130841ed, type: 2}
+    Amount: 1
+  - Item: {fileID: 11400000, guid: 64f6908a45d9c504f9d21e02ed33f70e, type: 2}
     Amount: 1
   Result:
-  - Item: {fileID: 11400000, guid: 089cb36466b3a5b49a4a7fee9429c8b5, type: 2}
+  - Item: {fileID: 0}
     Amount: 1
