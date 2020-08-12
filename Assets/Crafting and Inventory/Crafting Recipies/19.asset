@@ -10,12 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9867efa3150d6d94aafb678dd17fe706, type: 3}
-  m_Name: 3 Horn Shoot x Shimmer Stone
+  m_Name: 19
   m_EditorClassIdentifier: 
   Materials:
-  - Item: {fileID: 11400000, guid: e8ca427d8da02dd419f95718130841ed, type: 2}
-    Amount: 1
   - Item: {fileID: 11400000, guid: 155f0c930dfa19e499cc8cd25b1a6f13, type: 2}
+    Amount: 1
+  - Item: {fileID: 11400000, guid: d6fc3f7096866554caa1ffe9ae4a75ee, type: 2}
     Amount: 1
   Result:
   - Item: {fileID: 0}
