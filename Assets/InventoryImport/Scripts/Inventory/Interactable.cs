@@ -30,7 +30,7 @@ public class Interactable : MonoBehaviour
     void Update ()
     {
 
-        if (isFocus && !hasInteracted)
+        if (!hasInteracted)
         {
             float distance = Vector3.Distance(player.position, interactionTransform.position);
             if (distance <= radius)
