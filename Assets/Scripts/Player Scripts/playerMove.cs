@@ -6,11 +6,14 @@ using UnityEngine;
 public class playerMove : MonoBehaviour
 {
     public CharacterController controller;
+    
+     GameObject firstPersonPlayer;
+
 
     public float speed = 12f;
     public float jumpSpeed;
     public float gravity = -9.81f;
-    public float jumpHeight = 3f;
+    public float jumpHeight = 6f;
 
     public Transform groundCheck;
     public float groundDistance = 0.4f;
@@ -19,18 +22,19 @@ public class playerMove : MonoBehaviour
     Vector3 velocity;
     bool isGrounded;
     void Start(){
-        jumpSpeed = (2*speed/3);
+        
+       jumpSpeed = (2*speed/3);
     }
     
     // Update is called once per frame
     void Update()
     {
-
+        
     
         isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
 
         if(isGrounded && velocity.y < 0){
-            velocity.y = -2f;
+            velocity.y = 0f;
         }
         float x = Input.GetAxis("Horizontal");
         float z = Input.GetAxis("Vertical");
@@ -45,8 +49,12 @@ public class playerMove : MonoBehaviour
         if(isGrounded){
             controller.Move(move * jumpSpeed * Time.deltaTime);
         }
-
-        velocity.y += gravity * Time.deltaTime;
+        if(Input.GetKey(KeyCode.LeftShift) && isGrounded){
+            speed = (speed *2);
+            controller.Move(move * speed * Time.deltaTime);
+        }
+        
+        velocity.y += gravity * Time.deltaTime * 1.5f;
         controller.Move(velocity * Time.deltaTime);
     }
 }
