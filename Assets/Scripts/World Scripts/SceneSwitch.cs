@@ -9,12 +9,17 @@ public class SceneSwitch : MonoBehaviour
     private int sceneID;
     public enum SceneTarget
     {
-        StartingArea, Duncan
+        StartingArea, Duncan, Swamp
     }
     public SceneTarget portalTarget;
 
     void Start()
     {
+        if(portalTarget == SceneTarget.Swamp)
+        {
+            sceneID = 2;
+        }
+
         if(portalTarget == SceneTarget.Duncan)
         {
             sceneID = 1;
