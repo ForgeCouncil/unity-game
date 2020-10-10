@@ -17,12 +17,12 @@ public class SceneSwitch : MonoBehaviour
     {
         if(portalTarget == SceneTarget.Duncan)
         {
-            sceneID = 1;
+            sceneID = 2;
         }
 
         if(portalTarget == SceneTarget.StartingArea)
         {
-            sceneID = 0;
+            sceneID = 1;
         }
     }
 
