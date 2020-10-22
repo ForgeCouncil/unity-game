@@ -1152,6 +1152,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: firstPersonPlayer
       objectReference: {fileID: 0}
+    - target: {fileID: 6036200222719277470, guid: 390e60ef115036040a929ba404e02c0e,
+        type: 3}
+      propertyPath: speed
+      value: 15
+      objectReference: {fileID: 0}
     - target: {fileID: 6036200224061322692, guid: 390e60ef115036040a929ba404e02c0e,
         type: 3}
       propertyPath: Inventory

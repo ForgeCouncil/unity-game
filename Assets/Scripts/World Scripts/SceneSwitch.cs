@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class SceneSwitch : MonoBehaviour
 {
-    public Vector3 outLocation = new Vector3(100, 100, 100);
+    public Vector3 outLocation = new Vector3(300, 100, 100);
     private int sceneID;
     public enum SceneTarget
     {
