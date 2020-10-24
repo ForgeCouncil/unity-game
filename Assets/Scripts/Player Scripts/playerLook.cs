@@ -9,6 +9,8 @@ public class playerLook : MonoBehaviour
     
     public GameObject Inventory;
 
+    public GameObject PauseMenu;
+
     public Transform playerBody;
 
     float xRotation = 0f;
