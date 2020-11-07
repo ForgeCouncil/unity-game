@@ -7,6 +7,7 @@ public class Potions : Item
 {
     public int Duration;
     public int Potency;
+    public int jumpMod = 0;
     public Effects[] effects;
 
 
@@ -14,6 +15,8 @@ public class Potions : Item
     public override void Use()
     {
         base.Use();
+        GameObject player = GameObject.FindGameObjectWithTag("Player");
+        player.GetComponent<playerMove>().jumpHeight += jumpMod;
         RemoveFromInventory();
     }
 

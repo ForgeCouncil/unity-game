@@ -8,16 +8,23 @@ public class ItemPickup : Interactable
     public override void Interact()
     {
         base.Interact();
-        
         PickUp();
     }
 
     void PickUp()
     {
         Debug.Log("Picking up " + item.name + ".");
-        bool wasPickedUp = Inventory.instance.Add(item);
-        
-        if (wasPickedUp)
-            Destroy(gameObject);
+
+        //Fix these lines or the Inventory object.
+        //The objects are now destoyed but do not add to the inventory.
+
+        //bool wasPickedUp = Inventory.instance.Add(item);
+        // if (wasPickedUp)
+        // {
+        //     Destroy(gameObject);
+        // }
+
+        // Inventory.instance.Add(item);
+        Destroy(gameObject);
     }
 }
