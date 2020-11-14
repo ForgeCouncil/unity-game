@@ -36,14 +36,14 @@ public class playerLook : MonoBehaviour
         playerBody.Rotate(Vector3.up * mouseX);
         }
 
-        if(Inventory.activeSelf == true)
-        {
-            Cursor.lockState = CursorLockMode.None;
-        }
+        // if(Inventory.activeSelf == true)
+        // {
+        //     Cursor.lockState = CursorLockMode.None;
+        // }
 
-        if(Inventory.activeSelf == false)
-        {
-            Cursor.lockState = CursorLockMode.Locked;
-        }
+        // if(Inventory.activeSelf == false)
+        // {
+        //     Cursor.lockState = CursorLockMode.Locked;
+        // }
     }
 }
