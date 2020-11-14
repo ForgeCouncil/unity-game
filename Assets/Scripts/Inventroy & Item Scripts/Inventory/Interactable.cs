@@ -22,7 +22,7 @@ public class Interactable : MonoBehaviour
         if(other.gameObject.tag=="Player")
         {
             Interact();
-            //pickingUp = true;
+            pickingUp = true;
             Debug.Log("Picking up " + gameObject.name + ".");
         }    
     }
