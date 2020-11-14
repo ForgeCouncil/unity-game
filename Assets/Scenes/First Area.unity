@@ -2568,6 +2568,11 @@ PrefabInstance:
       propertyPath: portalTarget
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 4844499489419993971, guid: a60ef7f96f51dbd428dbfa557e89ac79,
+        type: 3}
+      propertyPath: outLocation.y
+      value: 50
+      objectReference: {fileID: 0}
     - target: {fileID: 6164505820633460455, guid: a60ef7f96f51dbd428dbfa557e89ac79,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -3489,7 +3494,12 @@ PrefabInstance:
     - target: {fileID: 6274936336375830669, guid: 4e67be54631fee74ab69f6681ec06ae8,
         type: 3}
       propertyPath: portalTarget
-      value: 1
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6274936336375830669, guid: 4e67be54631fee74ab69f6681ec06ae8,
+        type: 3}
+      propertyPath: outLocation.y
+      value: 400
       objectReference: {fileID: 0}
     - target: {fileID: 6274936337891113272, guid: 4e67be54631fee74ab69f6681ec06ae8,
         type: 3}

@@ -106,7 +106,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b7a3e288d5a83514a84c5128b01d893b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  outLocation: {x: 0, y: 0, z: 0}
+  outLocation: {x: 100, y: 100, z: 100}
+  portalTarget: 0
 --- !u!1 &6274936336506810418
 GameObject:
   m_ObjectHideFlags: 0

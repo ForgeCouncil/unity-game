@@ -17,4 +17,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Duncan Scene.unity
     guid: 38c3e9d857ec0bc4b96c7f40c84f45a1
+  - enabled: 1
+    path: Assets/Scenes/Swamp.unity
+    guid: 183114b5de23c6e47bf0f01a2b8f018b
   m_configObjects: {}

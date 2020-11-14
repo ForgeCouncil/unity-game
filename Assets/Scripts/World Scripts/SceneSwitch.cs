@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class SceneSwitch : MonoBehaviour
 {
-    public Vector3 outLocation = new Vector3(300, 100, 100);
+    public Vector3 outLocation = new Vector3(100, 100, 100);
     private int sceneID;
     public enum SceneTarget
     {
@@ -17,7 +17,7 @@ public class SceneSwitch : MonoBehaviour
     {
         if(portalTarget == SceneTarget.Swamp)
         {
-            sceneID = 2;
+            sceneID = 3;
         }
 
         if(portalTarget == SceneTarget.Duncan)
@@ -39,7 +39,9 @@ public class SceneSwitch : MonoBehaviour
 
         if(player.tag == "Player")
         {
+            player.transform.position = outLocation;
+
             SceneManager.LoadScene(sceneID);
-        }
+            }
     }
 }
