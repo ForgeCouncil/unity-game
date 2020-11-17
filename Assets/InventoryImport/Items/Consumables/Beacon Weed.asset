@@ -18,5 +18,6 @@ MonoBehaviour:
   Duration: 1
   Potency: 165
   jumpMod: 50
-  addSticky: 1
+  speedMod: 0
+  Sticky: 1
   effects: 0100000002000000
