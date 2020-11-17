@@ -7,7 +7,9 @@ public class Potions : Item
 {
     public int Duration;
     public int Potency;
-    public int jumpMod = 0;
+    public int jumpMod;
+    public int speedMod;
+    public bool Sticky;
     public Effects[] effects;
 
 
@@ -17,6 +19,8 @@ public class Potions : Item
         base.Use();
         GameObject player = GameObject.FindGameObjectWithTag("Player");
         player.GetComponent<playerMove>().jumpHeight += jumpMod;
+        player.GetComponent<playerMove>().speed += speedMod;
+        player.GetComponent<isSticky>().sticky = true;
         RemoveFromInventory();
     }
 

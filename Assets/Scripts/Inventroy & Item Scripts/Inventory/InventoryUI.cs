@@ -10,6 +10,8 @@ public class InventoryUI : MonoBehaviour
     
     Inventory inventory;
     
+    public float mouseSensitivity = 50f;
+
     void Start()
     {
         inventory = Inventory.instance;
@@ -20,9 +22,19 @@ public class InventoryUI : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.I))
+        if (Input.GetKeyDown(KeyCode.I) || (Input.GetKeyDown(KeyCode.Escape) && inventoryUI.activeSelf == true))
         {
             inventoryUI.SetActive(!inventoryUI.activeSelf);
+        }
+
+        if(inventoryUI.activeSelf == false)
+        {
+            Cursor.lockState = CursorLockMode.Locked;
+        }
+
+        if(inventoryUI.activeSelf == true)
+        {
+            Cursor.lockState = CursorLockMode.None;
         }
     }
 

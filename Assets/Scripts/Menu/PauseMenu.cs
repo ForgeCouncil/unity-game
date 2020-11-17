@@ -8,7 +8,7 @@ public class PauseMenu : MonoBehaviour
 
     public GameObject pasueMenuUI;
 
-    public float mouseSensitivity = 100f;
+    public float mouseSensitivity = 50f;
 
     public Transform playerBody;
 
@@ -31,30 +31,11 @@ public class PauseMenu : MonoBehaviour
                 
             }
         }
-        
-        if(pasueMenuUI.activeSelf == false)
-        {
-        float mouseX = Input.GetAxis("Mouse X") * mouseSensitivity * Time.deltaTime;
-        float mouseY = Input.GetAxis("Mouse Y") * mouseSensitivity * Time.deltaTime;
-        Cursor.lockState = CursorLockMode.Locked;
-
-        // xRotation -= mouseY;
-        // xRotation = Mathf.Clamp(xRotation, -90f, 90f);
-
-        // transform.localRotation = Quaternion.Euler(xRotation, 0f, 0f);
-
-        // playerBody.Rotate(Vector3.up * mouseX);
-        }
-
-        if(pasueMenuUI.activeSelf == true)
-        {
-            Cursor.lockState = CursorLockMode.None;
-        }
-
     }
 
     public void Resume()
     {
+        Cursor.lockState = CursorLockMode.None;
         pasueMenuUI.SetActive(false);
         Time.timeScale = 1f; //pauses time
         GameIsPaused = false;
@@ -63,6 +44,7 @@ public class PauseMenu : MonoBehaviour
 
     void Pause()
     {
+        Cursor.lockState = CursorLockMode.Confined;
         pasueMenuUI.SetActive(true);
         Time.timeScale = 0f; //pauses time
         GameIsPaused = true;
