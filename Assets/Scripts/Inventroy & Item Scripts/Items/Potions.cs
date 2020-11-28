@@ -7,8 +7,8 @@ public class Potions : Item
 {
     public int Duration;
     public int Potency;
-    public int jumpMod;
-    public int speedMod;
+    public float jumpMod;
+    public float speedMod;
     public bool Sticky;
     public Effects[] effects;
 
@@ -19,9 +19,15 @@ public class Potions : Item
         base.Use();
         GameObject player = GameObject.FindGameObjectWithTag("Player");
         player.GetComponent<playerMove>().jumpHeight += jumpMod;
-        player.GetComponent<playerMove>().speed += speedMod;
+        player.GetComponent<playerMove>().speedMod += speedMod;
         player.GetComponent<isSticky>().sticky = true;
         RemoveFromInventory();
+
+        new WaitForSeconds(Duration); // wear off
+        player.GetComponent<playerMove>().jumpHeight -= jumpMod;
+        player.GetComponent<playerMove>().speedMod -= speedMod;
+        player.GetComponent<isSticky>().sticky = false;
+        Debug.Log("Potion has worn off after " + Duration + " seconds!");
     }
 
     public enum Effects {Wisdom, Strength, Dexterity, Charisma, Intelligence, Constitution};
