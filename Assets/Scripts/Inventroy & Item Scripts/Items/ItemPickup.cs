@@ -15,16 +15,13 @@ public class ItemPickup : Interactable
     {
         Debug.Log("Picking up " + item.name + ".");
 
-        //Fix these lines or the Inventory object.
-        //The objects are now destoyed but do not add to the inventory.
+        bool wasPickedUp = Inventory.instance.Add(item);
+         if (wasPickedUp)
+        {
+            Destroy(gameObject);
+         }
 
-        //bool wasPickedUp = Inventory.instance.Add(item);
-        // if (wasPickedUp)
-        // {
-        //     Destroy(gameObject);
-        // }
-
-        // Inventory.instance.Add(item);
-        Destroy(gameObject);
+        //Inventory.instance.Add(item);
+        
     }
 }

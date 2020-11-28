@@ -15,6 +15,9 @@ MonoBehaviour:
   name: Beacon Weed
   icon: {fileID: 21300000, guid: 4b11460ebc72a1749a6e788e2f31c037, type: 3}
   isDefaultItem: 0
-  Duration: 20
-  Potency: 36
-  effects: 0100000002000000
+  Duration: 5
+  Potency: 165
+  jumpMod: 50
+  speedMod: 100
+  Sticky: 1
+  effects: 01000000020000000200000005000000
