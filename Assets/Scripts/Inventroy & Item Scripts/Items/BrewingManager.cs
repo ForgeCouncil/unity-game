@@ -8,10 +8,10 @@ public class BrewingManager : MonoBehaviour
 
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.V))
-        {
-            Instantiate(brewedPotion);
-            Debug.Log("Brewed a potion?");
-        }
+        // if(Input.GetKeyDown(KeyCode.V))
+        // {
+        //     Instantiate(brewedPotion);
+        //     Debug.Log("Brewed a potion?");
+        // }
     }
 }

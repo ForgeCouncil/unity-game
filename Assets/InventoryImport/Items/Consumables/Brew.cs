@@ -10,9 +10,9 @@ public class Brew : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKeyDown("b"))
-        {
-            NewPotion CreateInstance();
-        }
+        // if(Input.GetKeyDown("b"))
+        // {
+        //     NewPotion CreateInstance();
+        // }
     }
 }

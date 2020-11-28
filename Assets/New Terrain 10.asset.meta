@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<< HEAD
 guid: 0dec2defe5b554e428163dc3dff3f9b5
+=======
+guid: 4efdbfa75e8b3454aab2632f5a109b91
+>>>>>>> 7e11e04... Error Fixes and Paette Added
 NativeFormatImporter:
   externalObjects: {}
   mainObjectFileID: 0
