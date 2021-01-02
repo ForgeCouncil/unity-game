@@ -22,6 +22,7 @@ public class Potions : Item
         player.GetComponent<playerMove>().speedMod += speedMod;
         player.GetComponent<isSticky>().sticky = true;
         RemoveFromInventory();
+        TransferToBrewingMenu();
 
         new WaitForSeconds(Duration); // wear off
         player.GetComponent<playerMove>().jumpHeight -= jumpMod;

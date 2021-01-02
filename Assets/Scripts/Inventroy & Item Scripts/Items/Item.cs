@@ -8,6 +8,10 @@ public class Item : ScriptableObject
     public Sprite icon = null;
     public bool isDefaultItem = false;
 
+    //all kinds of tiems will inheret thses functions
+    // Potions for example can have seperate results for their own "use" functions
+    // for now, clicking an inventory slot button runs Use() and adds to the Brewing menus, 
+    // but later, we can make it so that only ingredients can be transfered this way whil potions are consumed
     public virtual void Use()
     {
         //Use the item
@@ -19,5 +23,10 @@ public class Item : ScriptableObject
     public void RemoveFromInventory()
     {
         Inventory.instance.Remove(this);
+    }
+
+    public void TransferToBrewingMenu()
+    {
+        BrewingMenu.instance.Add(this);
     }
 }

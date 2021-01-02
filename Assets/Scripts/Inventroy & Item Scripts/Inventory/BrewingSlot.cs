@@ -1,8 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
-//https://www.youtube.com/watch?v=YLhj7SfaxSE&list=PLPV2KyIb3jR4KLGCCAciWQ5qHudKtYeP7&index=7
 
-public class InventorySlot : MonoBehaviour
+public class BrewingSlot : MonoBehaviour
 {
     public Image icon;
     public Button removeButton;
@@ -20,11 +19,13 @@ public class InventorySlot : MonoBehaviour
 
     public void ClearSlot()
     {
+
         item = null;
 
         icon.sprite = null;
         icon.enabled = false;
         removeButton.interactable = false;
+        
     }
 
     public void OnRemoveButton()
@@ -37,7 +38,6 @@ public class InventorySlot : MonoBehaviour
         if (item != null)
         {
             item.Use();
-
         }
     }
 }
