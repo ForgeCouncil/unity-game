@@ -26,18 +26,18 @@ public class BrewingMenu : MonoBehaviour
 
     public int space = 4;
 
-    public List<Item> ingredients = new List<Item>();
+    public List<Item> items = new List<Item>();
 
     public bool Add (Item item)
     {
         if (!item.isDefaultItem)
         {
-            if (ingredients.Count >= space)
+            if (items.Count >= space)
             {
                 return false;
             }
             
-            ingredients.Add(item);
+            items.Add(item);
 
             if (onItemChangedCallback != null)
                 onItemChangedCallback.Invoke();
@@ -48,7 +48,7 @@ public class BrewingMenu : MonoBehaviour
 
     public void Remove (Item item)
     {
-        ingredients.Remove(item);
+        items.Remove(item);
 
         if (onItemChangedCallback != null)
                 onItemChangedCallback.Invoke();

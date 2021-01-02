@@ -17,12 +17,13 @@ public class Potions : Item
     public override void Use()
     {
         base.Use();
+        BrewingMenu.instance.Add(this);
         GameObject player = GameObject.FindGameObjectWithTag("Player");
         player.GetComponent<playerMove>().jumpHeight += jumpMod;
         player.GetComponent<playerMove>().speedMod += speedMod;
         player.GetComponent<isSticky>().sticky = true;
+
         RemoveFromInventory();
-        TransferToBrewingMenu();
 
         new WaitForSeconds(Duration); // wear off
         player.GetComponent<playerMove>().jumpHeight -= jumpMod;

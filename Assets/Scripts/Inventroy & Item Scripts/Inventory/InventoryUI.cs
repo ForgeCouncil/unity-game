@@ -4,6 +4,7 @@
 public class InventoryUI : MonoBehaviour
 {
     public Transform itemsParent;
+    public Transform itemsParentBrewing;
     public GameObject inventoryUI;
     public GameObject brewingUI;
 
@@ -21,11 +22,11 @@ public class InventoryUI : MonoBehaviour
         inventory.onItemChangedCallback += UpdateUI;
 
         brewingMenu = BrewingMenu.instance;
-        //brewingMenu.onItemChangedCallback += UpdateBrewingUI;
+        brewingMenu.onItemChangedCallback += UpdateBrewingUI;
 
 
         slots = itemsParent.GetComponentsInChildren<InventorySlot>();
-        brewingSlots = itemsParent.GetComponentsInChildren<BrewingSlot>();
+        brewingSlots = itemsParentBrewing.GetComponentsInChildren<BrewingSlot>();
     }
 
     void Update()
@@ -78,19 +79,19 @@ public class InventoryUI : MonoBehaviour
         }
     }
 
-    // void UpdateBrewingUI ()
-    // {
-    //     for (int i = 0; i <brewingSlots.Length; i++)
-    //     {
-    //         if (i < brewingMenu.ingredients.Count)
-    //         {
-    //             brewingSlots[i].AddItem(brewingMenu.ingredients[i]);
-    //         }
+    void UpdateBrewingUI ()
+    {
+        for (int i = 0; i <brewingSlots.Length; i++)
+        {
+            if (i < brewingMenu.items.Count)
+            {
+                brewingSlots[i].AddItem(brewingMenu.items[i]);
+            }
             
-    //         else
-    //         {
-    //             brewingSlots[i].ClearSlot();
-    //         }
-    //     }
-    // }
+            else
+            {
+                brewingSlots[i].ClearSlot();
+            }
+        }
+    }
 }
