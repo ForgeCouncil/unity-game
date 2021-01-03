@@ -1,6 +1,7 @@
-﻿using System.Collections;
+﻿using UnityEngine;
+using UnityEngine.UI;
+using System.Collections;
 using System.Collections.Generic;
-using UnityEngine;
 
 public class BrewingMenu : MonoBehaviour
 {
@@ -28,6 +29,20 @@ public class BrewingMenu : MonoBehaviour
 
     public List<Item> items = new List<Item>();
 
+    public GameObject brewButtonPanel;
+    public Button brewButton;
+    public GameObject resultSlot;
+
+
+    public void Start ()
+    {
+        brewButtonPanel = GameObject.Find("Brewing/BrewButtonPanel");
+        resultSlot = GameObject.Find("Brewing/ItemsParent/ResultSlot");
+        resultSlot.SetActive(false);
+        
+        //brewButton = brewButtonPanel.GetComponent<Button>();
+    }
+    
     public bool Add (Item item)
     {
         if (!item.isDefaultItem)
@@ -52,5 +67,36 @@ public class BrewingMenu : MonoBehaviour
 
         if (onItemChangedCallback != null)
                 onItemChangedCallback.Invoke();
+    }
+
+    public void Update()
+    {
+        if (items.Count == 4)
+        {
+            brewButton.interactable = true;
+            resultSlot.SetActive(true);
+        }
+
+        else
+        {
+            brewButton.interactable = false;
+        }
+    }
+
+    public void Brew()
+    {
+        if (items.Count == 4 && brewButtonPanel.activeSelf && resultSlot.activeSelf)
+        {
+            
+            
+            //check for recipe
+                // loop through array
+                // find id of each ingredient in array
+                // check for potion with those requirements
+                // if failed, make beef lemonade
+
+            //instantiate potion
+            //add instantiated potion to inventory
+        }
     }
 }

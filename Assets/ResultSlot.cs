@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 
-public class BrewingSlot : MonoBehaviour
+public class ResultSlot : MonoBehaviour
 {
     public Image icon;
     public Button removeButton;
@@ -25,12 +25,12 @@ public class BrewingSlot : MonoBehaviour
         icon.sprite = null;
         icon.enabled = false;
         removeButton.interactable = false;
-
+        
     }
 
     public void OnRemoveButton()
     {
-        BrewingMenu.instance.Remove(item);
+        Inventory.instance.Remove(item);
     }
 
     public void UseItem()
