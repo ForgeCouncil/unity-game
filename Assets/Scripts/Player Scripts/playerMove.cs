@@ -16,6 +16,9 @@ public class playerMove : MonoBehaviour
     public float gravity = -9.81f;
     public float jumpHeight = 6f;
 
+    public float slopeForce;
+    public float slopeForceRayLength;
+
     public Transform groundCheck;
     public float groundDistance = 0.4f;
     public LayerMask groundMask;
@@ -44,6 +47,8 @@ public class playerMove : MonoBehaviour
 
         controller.Move(move * speed * Time.deltaTime * speedMod);
 
+        if((x != 0 || z  != 0) && OnSlope())
+            controller.Move(Vector3.down * controller.height / 2 * slopeForce * Time.deltaTime);
         if(Input.GetButtonDown("Jump") && isGrounded){
             velocity.y = Mathf.Sqrt(jumpHeight * -2 * gravity);
         }
@@ -57,5 +62,19 @@ public class playerMove : MonoBehaviour
         
         velocity.y += gravity * Time.deltaTime * 1.5f;
         controller.Move(velocity * Time.deltaTime);
+        
+        
+     bool OnSlope(){
+        if(isGrounded)
+            return true;
+
+            RaycastHit hit;
+
+            if(Physics.Raycast(transform.position, Vector3.down, out hit, controller.height / 2 * slopeForceRayLength))
+            if(hit.normal != Vector3.up)
+                return true;
+            return false;
+    }
+
     }
 }

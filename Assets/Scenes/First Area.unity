@@ -3005,8 +3005,10 @@ MonoBehaviour:
   jumpSpeed: 0
   gravity: -35
   jumpHeight: 6
+  slopeForce: 7
+  slopeForceRayLength: 0.47
   groundCheck: {fileID: 1961859984}
-  groundDistance: 0.4
+  groundDistance: 0.7
   groundMask:
     serializedVersion: 2
     m_Bits: 512
