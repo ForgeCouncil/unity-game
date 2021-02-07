@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Menu
   - Portal
+  - Start Anchor
   layers:
   - Default
   - TransparentFX

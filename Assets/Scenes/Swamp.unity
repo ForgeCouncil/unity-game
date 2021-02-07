@@ -197,6 +197,36 @@ Transform:
   m_Father: {fileID: 1136467211}
   m_RootOrder: 20
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &210850486
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 210850487}
+  m_Layer: 0
+  m_Name: GameObject
+  m_TagString: Start Anchor
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &210850487
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 210850486}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 3591, y: 190.9, z: 4234.8}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &236423604
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -208,6 +238,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Persistent Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 6270395872833385797, guid: 129b8fbe01980224b9284c820254b2a0,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6270395872833385799, guid: 129b8fbe01980224b9284c820254b2a0,
         type: 3}
@@ -297,12 +332,12 @@ PrefabInstance:
     - target: {fileID: 6270395873483543632, guid: 129b8fbe01980224b9284c820254b2a0,
         type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6270395873483543632, guid: 129b8fbe01980224b9284c820254b2a0,
         type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6270395874224095044, guid: 129b8fbe01980224b9284c820254b2a0,
         type: 3}
@@ -372,12 +407,12 @@ PrefabInstance:
     - target: {fileID: 6270395874784809760, guid: 129b8fbe01980224b9284c820254b2a0,
         type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6270395874784809760, guid: 129b8fbe01980224b9284c820254b2a0,
         type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 129b8fbe01980224b9284c820254b2a0, type: 3}
@@ -436,7 +471,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemsParent: {fileID: 236423605}
+  itemsParentBrewing: {fileID: 0}
   inventoryUI: {fileID: 236423606}
+  brewingUI: {fileID: 0}
+  mouseSensitivity: 50
 --- !u!1 &243308439
 GameObject:
   m_ObjectHideFlags: 0
@@ -2824,7 +2862,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!81 &1739514409
 AudioListener:
   m_ObjectHideFlags: 0
