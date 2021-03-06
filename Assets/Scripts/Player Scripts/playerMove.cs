@@ -3,12 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
-public class playerMove : MonoBehaviour
-{
+public class playerMove : MonoBehaviour {
     public CharacterController controller;
-    
-     GameObject firstPersonPlayer;
 
+    GameObject firstPersonPlayer;
 
     public float speed = 12f;
     public float speedMod = 1f;
@@ -25,19 +23,16 @@ public class playerMove : MonoBehaviour
 
     Vector3 velocity;
     bool isGrounded;
-    void Start()
-    {
-        
-       jumpSpeed = (2*speed/3);
+    void Start() {
+        jumpSpeed = (2 * speed / 3);
     }
-    
+
     // Update is called once per frame
-    void Update()
-    {
-        
+    void Update() {
+
         isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
 
-        if(isGrounded && velocity.y < 0){
+        if (isGrounded && velocity.y < 0) {
             velocity.y = 0f;
         }
         float x = Input.GetAxis("Horizontal");
@@ -47,34 +42,41 @@ public class playerMove : MonoBehaviour
 
         controller.Move(move * speed * Time.deltaTime * speedMod);
 
-        if((x != 0 || z  != 0) && OnSlope())
+        if ((x != 0 || z != 0) && OnSlope())
             controller.Move(Vector3.down * controller.height / 2 * slopeForce * Time.deltaTime);
-        if(Input.GetButtonDown("Jump") && isGrounded){
+        if (Input.GetButtonDown("Jump") && isGrounded) {
             velocity.y = Mathf.Sqrt(jumpHeight * -2 * gravity);
         }
-        if(isGrounded){
+        if (isGrounded) {
             controller.Move(move * jumpSpeed * Time.deltaTime);
         }
-        if(Input.GetKey(KeyCode.LeftShift) && isGrounded){
-            speed = (speed *2);
+        if (Input.GetKey(KeyCode.LeftShift) && isGrounded) {
+            speed = (speed * 2);
             controller.Move(move * speed * Time.deltaTime);
         }
-        
+
         velocity.y += gravity * Time.deltaTime * 1.5f;
         controller.Move(velocity * Time.deltaTime);
-        
-        
-     bool OnSlope(){
-        if(isGrounded)
-            return true;
+
+
+        bool OnSlope() {
+            if (isGrounded)
+                return true;
 
             RaycastHit hit;
 
-            if(Physics.Raycast(transform.position, Vector3.down, out hit, controller.height / 2 * slopeForceRayLength))
-            if(hit.normal != Vector3.up)
-                return true;
+            if (Physics.Raycast(transform.position, Vector3.down, out hit, controller.height / 2 * slopeForceRayLength)) {
+                if (hit.normal != Vector3.up) return true;
+            }
             return false;
-    }
+        }
 
     }
+
+    public void Teleport(Vector3 destination) {
+        controller.enabled = false;
+        controller.transform.position = destination;
+        controller.enabled = true;
+    }
+
 }

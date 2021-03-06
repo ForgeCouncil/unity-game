@@ -1,47 +1,56 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System.Runtime.Serialization;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class SceneSwitch : MonoBehaviour
-{
-    public Vector3 outLocation = new Vector3(100, 100, 100);
-    private int sceneID;
-    public enum SceneTarget
-    {
-        StartingArea, Duncan, Swamp
+public class SceneSwitch : MonoBehaviour {
+
+    public enum SceneTarget {
+        [EnumMember(Value = "First Area")]
+        FirstArea,
+        [EnumMember(Value = "Duncan Scene")]
+        Duncan,
+        [EnumMember(Value = "Swamp")]
+        Swamp,
+        [EnumMember(Value = "FloatingIslands")]
+        FloatingIslands,
+        [EnumMember(Value = "PortalRoom")]
+        PortalRoom
     }
+
     public SceneTarget portalTarget;
 
-    void Start()
-    {
-        if(portalTarget == SceneTarget.Swamp)
-        {
-            sceneID = 3;
-        }
+    void Start() {
+        // handle 
+        SceneManager.activeSceneChanged += OnSceneLoaded;
+    }
 
-        if(portalTarget == SceneTarget.Duncan)
-        {
-            sceneID = 2;
-        }
+    void OnTriggerEnter(Collider player) {
+        Debug.Log("SceneSwitch.OnTriggerEnter :: Triggered by collider", player);
 
-        if(portalTarget == SceneTarget.StartingArea)
-        {
-            sceneID = 1;
+        if (player.tag == "Player") {
+            Debug.Log("SceneSwitch.OnTriggerEnter :: Player detected");
+            CharacterController controller = player.GetComponent("CharacterController") as CharacterController;
+
+            Debug.Log("SceneSwitch.OnTriggerEnter :: Current scene index: " + SceneManager.GetActiveScene().buildIndex);
+
+
+            // start loading the target scene
+            Debug.Log("SceneSwitch.OnTriggerEnter :: Target scene: " + portalTarget.ToString());
+
+            SceneManager.LoadScene(portalTarget.ToString());
         }
     }
 
-    void OnTriggerEnter(Collider player)
-    {
-        //$5 to anyone that can figure out why the player maintains its transform 
-        //when it goes through the portal even with the following line active. >_<
-        //player.transform.position = outLocation;
+    public void OnSceneLoaded(Scene oldScene, Scene newScene) {
+        Debug.Log("SceneSwitch.OnTriggerEnter :: New scene index: " + SceneManager.GetActiveScene().buildIndex);
 
-        if(player.tag == "Player")
-        {
-            player.transform.position = outLocation;
+        GameObject[] anchors = GameObject.FindGameObjectsWithTag("Start Anchor");
 
-            SceneManager.LoadScene(sceneID);
-            }
+        if (anchors.Length > 0) {
+            GameObject anchor = anchors[0];
+            Debug.Log("SceneSwitch.OnTriggerEnter :: Start Anchor", anchor);
+            GameObject.FindGameObjectWithTag("Player").GetComponent<playerMove>().Teleport(anchor.transform.position);
+        }
     }
+
 }

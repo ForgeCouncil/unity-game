@@ -19,7 +19,7 @@ public class StaminaBarScale : MonoBehaviour
 
     void Start () {
          pos= transform.position;
-         Debug.Log("pos is " + pos);
+        //  Debug.Log("pos is " + pos);
      }
 
     void Update()

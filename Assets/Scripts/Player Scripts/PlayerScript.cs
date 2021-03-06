@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -14,6 +14,7 @@ public class PlayerScript : MonoBehaviour
     public StaminaBar staminaBar;
     public StaminaBarScale staminaBarScale1;
     public StaminaBarScale staminaBarScale2;
+    public Vector3 teleportPos;
     public float tickTime;
     int layer_poison = 10;
     
