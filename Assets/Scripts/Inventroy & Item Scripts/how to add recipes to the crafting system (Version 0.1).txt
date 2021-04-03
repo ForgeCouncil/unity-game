@@ -1,0 +1,18 @@
+[How to add item "recipes" to the crafting system]
+
+1. Pray to a dark god.
+
+2. Open BrewingMenu.cs (Assets > Scripts > Inventory & Item Scripts > BrewingMenu.cs)
+
+3. Scroll down to | public void Brew() |, line 95 as of right now.
+
+4. Copy an existing recipe.
+
+5. Change required ingredients in the 'if()' statement to the itemId strings of the desired ingredients.
+
+6. Change the text of the second line to match the name of the instancer of the desired output
+	brewResult = GameObject.Find("DontDestroyOnLoad/----Instancers----/CHANGE THIS PART");
+
+7. Double check to make sure the recipe has 'SetBrewItem();' in the next line and 'return;' in the line after that.
+
+8. Try it out!
