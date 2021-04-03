@@ -32,4 +32,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Darkness.unity
     guid: 9547b93ee392a05479759146c832ddd5
+  - enabled: 1
+    path: Assets/Scenes/StartingArea.unity
+    guid: 10ade85de8a195445adc220d1d2f5839
   m_configObjects: {}

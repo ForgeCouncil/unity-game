@@ -19,6 +19,8 @@ public class SceneSwitch : MonoBehaviour {
         Tundra,
         [EnumMember(Value = "Darkness")]
         Darkness,
+        [EnumMember(Value = "StartingArea")]
+        StartingArea,
     }
 
     public SceneTarget portalTarget;
