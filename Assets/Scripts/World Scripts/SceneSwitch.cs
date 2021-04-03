@@ -14,7 +14,11 @@ public class SceneSwitch : MonoBehaviour {
         [EnumMember(Value = "FloatingIslands")]
         FloatingIslands,
         [EnumMember(Value = "PortalRoom")]
-        PortalRoom
+        PortalRoom,
+        [EnumMember(Value = "Tundra")]
+        Tundra,
+        [EnumMember(Value = "Darkness")]
+        Darkness,
     }
 
     public SceneTarget portalTarget;

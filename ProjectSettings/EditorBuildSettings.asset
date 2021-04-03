@@ -29,4 +29,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Tundra.unity
     guid: a8721c9b5b395a6409369c53badb3016
+  - enabled: 1
+    path: Assets/Scenes/Darkness.unity
+    guid: 9547b93ee392a05479759146c832ddd5
   m_configObjects: {}
