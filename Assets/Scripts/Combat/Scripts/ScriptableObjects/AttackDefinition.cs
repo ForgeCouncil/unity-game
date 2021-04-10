@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -13,21 +13,21 @@ public class AttackDefinition : ScriptableObject
     public float criticalMultiplier;
     public float criticalChance;
 
-    public Attack CreateAttack(PlayerScript wielderStats, PlayerScript defenderStats)
-    {
-        float coreDamage = wielderStats.GetDamage();
-        coreDamage += Random.Range(minDamage, maxDamage);
+    //public Attack CreateAttack(PlayerScript wielderStats, PlayerScript defenderStats)
+   // {
+        // // float coreDamage = wielderStats.GetDamage();
+        // coreDamage += Random.Range(minDamage, maxDamage);
 
-        bool isCritical = Random.value < criticalChance;
-        if (isCritical)
-            coreDamage *= criticalMultiplier;
+        // bool isCritical = Random.value < criticalChance;
+        // if (isCritical)
+        //     coreDamage *= criticalMultiplier;
 
-        if (defenderStats != null)
-            coreDamage -= defenderStats.GetResistance();
+        // if (defenderStats != null)
+        //     // coreDamage -= defenderStats.GetResistance();
 
-        return new Attack((int)coreDamage, isCritical);
+        // return new Attack((int)coreDamage, isCritical);
 
-    }
+  //  }
 
 
 
