@@ -51,9 +51,10 @@ public class playerMove : MonoBehaviour {
             controller.Move(move * jumpSpeed * Time.deltaTime);
         }
         if (Input.GetKey(KeyCode.LeftShift) && isGrounded) {
-            speed = (speed * 2);
-            controller.Move(move * speed * Time.deltaTime);
+            speedMod = (speedMod * 1.2f);
+            controller.Move(move * speedMod * Time.deltaTime);
         }
+        speedMod = 1f;
 
         velocity.y += gravity * Time.deltaTime * 1.5f;
         controller.Move(velocity * Time.deltaTime);
