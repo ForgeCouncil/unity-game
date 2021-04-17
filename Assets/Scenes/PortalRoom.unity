@@ -11006,6 +11006,26 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   icon: {fileID: 320419990}
   removeButton: {fileID: 1601056231}
+--- !u!1 &1547034744 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6274936337891113272, guid: 4e67be54631fee74ab69f6681ec06ae8,
+    type: 3}
+  m_PrefabInstance: {fileID: 788078415}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1547034745
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1547034744}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f0f65ffb1f676564d88a4eb866698217, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 1
+  height: 2
 --- !u!1 &1553691233
 GameObject:
   m_ObjectHideFlags: 0
