@@ -5,14 +5,17 @@ public class InventoryUI : MonoBehaviour
 {
     public Transform itemsParent;
     public Transform itemsParentBrewing;
+    public Transform itemsParentQuest;
     public GameObject inventoryUI;
     public GameObject brewingUI;
+    public GameObject questUI;
 
     InventorySlot[] slots;
     BrewingSlot[] brewingSlots;
     
     Inventory inventory;
     BrewingMenu brewingMenu;
+    QuestMenu questMenu;
     
     public float mouseSensitivity = 50f;
 
@@ -23,6 +26,8 @@ public class InventoryUI : MonoBehaviour
 
         brewingMenu = BrewingMenu.instance;
         brewingMenu.onItemChangedCallback += UpdateBrewingUI;
+
+        questMenu = QuestMenu.instance;
 
 
         slots = itemsParent.GetComponentsInChildren<InventorySlot>();
@@ -60,6 +65,12 @@ public class InventoryUI : MonoBehaviour
         if(brewingUI.activeSelf == true)
         {
             Cursor.lockState = CursorLockMode.None;
+        }
+
+        //Quest Q button
+        if (Input.GetKeyDown(KeyCode.Q) || (Input.GetKeyDown(KeyCode.Escape) && questUI.activeSelf == true))
+        {
+            questUI.SetActive(!questUI.activeSelf);
         }
     }
 
