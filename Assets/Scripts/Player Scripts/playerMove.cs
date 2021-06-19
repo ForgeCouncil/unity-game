@@ -23,6 +23,7 @@ public class playerMove : MonoBehaviour {
 
     Vector3 velocity;
     bool isGrounded;
+    public Vector3 windMove;
     void Start() {
         jumpSpeed = (2 * speed / 3);
     }
@@ -38,7 +39,7 @@ public class playerMove : MonoBehaviour {
         float x = Input.GetAxis("Horizontal");
         float z = Input.GetAxis("Vertical");
 
-        Vector3 move = transform.right * x + transform.forward * z;
+        Vector3 move = (transform.right * x + transform.forward * z) + windMove;
 
         controller.Move(move * speed * Time.deltaTime * speedMod);
 
