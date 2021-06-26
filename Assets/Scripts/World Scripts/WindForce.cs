@@ -1,38 +1,38 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class WindForce : MonoBehaviour
 {
     public GameObject BlownThing;
     public Vector3 WindDirection;
-    public float windSpeed = 2;
-
-    public bool randomWind;
+    public bool windToggle;
     public Transform windicator;
+    public Text windText;
     
     void Start()
     {
-        BlownThing = GameObject.FindGameObjectWithTag("Player");
+       // BlownThing = GameObject.FindGameObjectWithTag("Player");
     }
 
-    void Update()
+    void OnTriggerEnter(Collider collision)
     {
-        //BlownThing.GetComponent<Rigidbody>().AddForce(WindDirection * windSpeed);
-        
-        if(Input.GetKeyDown(KeyCode.U) && randomWind == true)
+        if(collision.gameObject.CompareTag("Player"))
         {
-            WindDirection = new Vector3((Random.Range(-1.0f, 1.0f)), 0,(Random.Range(-1.0f, 1.0f)));
-        }
-
-        if(Input.GetKeyDown(KeyCode.N) && randomWind == true)
-        {
-            WindDirection = new Vector3(0,0,0);
-        }
-
-        if(windSpeed > 0)
-        {
+            Debug.Log("Player entered the" + gameObject.name + ".");
             BlownThing.GetComponent<playerMove>().windMove = WindDirection;
+            windText.text = ("Wind direction " + WindDirection                                                                                   );
+        }
+    }
+
+    void OnTriggerExit(Collider collision)
+    {
+        if(collision.gameObject.CompareTag("Player"))
+        {
+            BlownThing.GetComponent<playerMove>().windMove = new Vector3(0,0,0);
+            Debug.Log("Player left the" + gameObject.name + ".");
+            windText.text = ("No wind");
         }
     }
 }

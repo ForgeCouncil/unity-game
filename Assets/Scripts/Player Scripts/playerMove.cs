@@ -24,6 +24,7 @@ public class playerMove : MonoBehaviour {
     Vector3 velocity;
     bool isGrounded;
     public Vector3 windMove;
+    
     void Start() {
         jumpSpeed = (2 * speed / 3);
     }
