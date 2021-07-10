@@ -10,29 +10,37 @@ public class WindForce : MonoBehaviour
     public bool windToggle;
     public Transform windicator;
     public Text windText;
-    
-    void Start()
-    {
-       // BlownThing = GameObject.FindGameObjectWithTag("Player");
-    }
+    public Rigidbody blownThingRB;
+    public bool isBlowing;
+    public float windStrength;
+    //Make sure that the windStrength or the WindDirection is MUCH higher if the wind zone is pushing on the XZ axis. 
+    //Y axis should be in the 10's, XZ should be in the 100's. Set in inspector.
 
-    void OnTriggerEnter(Collider collision)
+    void Update()
     {
-        if(collision.gameObject.CompareTag("Player"))
+        if(isBlowing == true && blownThingRB != null)
         {
-            Debug.Log("Player entered the" + gameObject.name + ".");
-            BlownThing.GetComponent<playerMove>().windMove = WindDirection;
-            windText.text = ("Wind direction " + WindDirection                                                                                   );
+            blownThingRB.AddForce(WindDirection * windStrength);
         }
     }
 
-    void OnTriggerExit(Collider collision)
+    void OnTriggerEnter(Collider col)
     {
-        if(collision.gameObject.CompareTag("Player"))
+        if(col.gameObject.CompareTag("Player"))
         {
-            BlownThing.GetComponent<playerMove>().windMove = new Vector3(0,0,0);
-            Debug.Log("Player left the" + gameObject.name + ".");
-            windText.text = ("No wind");
+            Debug.Log("Entered " + this.name + ".");
+            blownThingRB = col.gameObject.GetComponent<Rigidbody>();
+            isBlowing = true;
+        }
+    }
+
+    void OnTriggerExit(Collider col)
+    {
+        if(col.gameObject.CompareTag("Player"))
+        {
+            Debug.Log("Exited " + this.name + ". No longer being blown.");
+            blownThingRB = null;
+            isBlowing = false;
         }
     }
 }
