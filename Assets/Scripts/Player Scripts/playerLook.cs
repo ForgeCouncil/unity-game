@@ -15,14 +15,34 @@ public class playerLook : MonoBehaviour
 
     float xRotation = 0f;
     // Start is called before the first frame update
+
+
+    //respawn stuff
+    public Transform target;
+    float offsetZ;
+    Vector3 lastTargetPosition;
+
+    float nextTimeToSearch = 0;
+
+
+
     void Start()
     {
         Cursor.lockState = CursorLockMode.Locked;
+
+        lastTargetPosition=target.position;
+        offsetZ = (transform.position - target.position).z;
+        transform.parent = null;
     }
 
     // Update is called once per frame
     void Update() //Added if statements to "switch" cursor from directional to UI manipulation. -Ian 08/15/20
     {
+        if (target == null){
+            FindPlayer();
+            return;
+        }
+
         if(Inventory.activeSelf == false)
         {
         float mouseX = Input.GetAxis("Mouse X") * mouseSensitivity * Time.deltaTime;
@@ -45,5 +65,18 @@ public class playerLook : MonoBehaviour
         // {
         //     Cursor.lockState = CursorLockMode.Locked;
         // }
+    }
+
+    void FindPlayer()
+    {
+        if (nextTimeToSearch <= Time.time)
+        {
+            GameObject searchResult = GameObject.FindGameObjectWithTag ("Player");
+            if ( searchResult != null)
+            {
+                target = searchResult.transform;
+            }
+            nextTimeToSearch = Time.time + 0.5f;
+        }
     }
 }

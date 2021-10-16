@@ -12,7 +12,7 @@ public class PauseMenu : MonoBehaviour
 
     public Transform playerBody;
 
-    float xRotation = 0f;
+    //float xRotation = 0f;
 
     // Update is called once per frame
     void Update()

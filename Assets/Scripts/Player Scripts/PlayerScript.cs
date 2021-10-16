@@ -15,6 +15,8 @@ public class PlayerScript : MonoBehaviour
     public StaminaBarScale staminaBarScale1;
     public StaminaBarScale staminaBarScale2;
     public Vector3 teleportPos;
+
+    public GameObject player;
     public float tickTime;
     int layer_poison = 10;
     
@@ -28,7 +30,8 @@ public class PlayerScript : MonoBehaviour
     void Update()
     {
 
-
+        Debug.Log("current health: " + currentHealth);
+        
         if(Input.GetKeyDown(KeyCode.J)) //if "J" is pressed player takes 10 damage
         {
             Damage(10);
@@ -53,11 +56,12 @@ public class PlayerScript : MonoBehaviour
             currentHealth = maxHealth;
             healthBar.SetHealth(currentHealth);
         }
-        else if ( currentHealth < 0) //player can't go below min health (0)
-        {
-            currentHealth = 0;
-            healthBar.SetHealth(currentHealth);
-        }
+        // else if ( currentHealth < 0) //player can't go below min health (0)
+        // {
+        //     Debug.Log("current health: " + currentHealth);
+        //     currentHealth = 0;
+        //     healthBar.SetHealth(currentHealth);
+        // }
 
 
         if (currentStamina > maxStamina) //player can't exceed max stamina (100 at start)
@@ -65,7 +69,7 @@ public class PlayerScript : MonoBehaviour
             currentStamina = maxStamina;
             staminaBar.SetStamina(currentStamina);
         }
-        else if ( currentStamina < 0) //player can't go below min health (0)
+        else if ( currentStamina < 0) //player can't go below min stamina (0)
         {
             currentStamina = 0;
             staminaBar.SetStamina(currentStamina);
@@ -80,8 +84,11 @@ public class PlayerScript : MonoBehaviour
     public void Damage(int damage) //function to inflict damage to player
     {
         currentHealth -= damage;
-        //healthBarScale.currentHP -= damage;
         healthBar.SetHealth(currentHealth);
+        if (currentHealth <= 0) {
+            Debug.Log ("KILL Player");
+            GameMaster.KILLPLAYER();
+        }
     }
 
     public void Heal(int heal) // function to heal player
@@ -127,6 +134,5 @@ public class PlayerScript : MonoBehaviour
                 tickTime = 1.0f;
             }
         }
-
     }
 }

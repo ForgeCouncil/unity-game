@@ -1613,7 +1613,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 346ab74ca4fdf13479a66ab1383464cf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 453052495}
 --- !u!1001 &471809452
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2979,6 +2978,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cc40d8d694ec49446b4755c8fb5c3bc4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player: {fileID: 0}
+  respawnPoint: {fileID: 0}
   slider: {fileID: 797117720}
   gradient:
     serializedVersion: 2
@@ -3010,6 +3011,8 @@ MonoBehaviour:
     m_NumColorKeys: 2
     m_NumAlphaKeys: 2
   fill: {fileID: 1794961642}
+  healthBarScale1: {fileID: 0}
+  playerScript: {fileID: 0}
 --- !u!114 &797117720
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4142,6 +4145,11 @@ PrefabInstance:
       propertyPath: sprintBarBG
       value: 
       objectReference: {fileID: 769069277}
+    - target: {fileID: 5297963592467567187, guid: 05ed443262c4ac74aacf32309aebd787,
+        type: 3}
+      propertyPath: speedReduction
+      value: 0.2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 05ed443262c4ac74aacf32309aebd787, type: 3}
 --- !u!1001 &918697803
@@ -6621,7 +6629,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 346ab74ca4fdf13479a66ab1383464cf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 1529089414}
 --- !u!114 &1529089411
 MonoBehaviour:
   m_ObjectHideFlags: 0

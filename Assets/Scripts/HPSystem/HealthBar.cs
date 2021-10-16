@@ -1,14 +1,18 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI; // used to interact with the health bar (graphic)
 
 public class HealthBar : MonoBehaviour
 {
+    [SerializeField] private Transform player;
+    [SerializeField] private Transform respawnPoint;
     public Slider slider; 
     public Gradient gradient;
     public Image fill;
     private Vector3 scaleChange, positionChange;
+    public HealthBarScale healthBarScale1;
+    public PlayerScript playerScript;
     
 
     void start() {
@@ -28,5 +32,4 @@ public class HealthBar : MonoBehaviour
 
         fill.color = gradient.Evaluate(slider.normalizedValue); // updates the color of the health bar
     }
-
 }
